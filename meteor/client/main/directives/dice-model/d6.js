@@ -1,18 +1,18 @@
-var modelData = {
+diceModelData.d6 = {
   createMesh: function (color) {
     var geometry = new THREE.BoxGeometry(1.15,1.15,1.15);
-    geometry.faceVertexUvs[0][0] = modelData.Uvs['d1-1']; // 1
-    geometry.faceVertexUvs[0][1] = modelData.Uvs['d1-2'];
-    geometry.faceVertexUvs[0][2] = modelData.Uvs['d6-1']; // 6
-    geometry.faceVertexUvs[0][3] = modelData.Uvs['d6-2'];
-    geometry.faceVertexUvs[0][4] = modelData.Uvs['d2-1']; // 2
-    geometry.faceVertexUvs[0][5] = modelData.Uvs['d2-2'];
-    geometry.faceVertexUvs[0][6] = modelData.Uvs['d5-1']; // 5
-    geometry.faceVertexUvs[0][7] = modelData.Uvs['d5-2'];
-    geometry.faceVertexUvs[0][8] = modelData.Uvs['d3-1']; // 3
-    geometry.faceVertexUvs[0][9] = modelData.Uvs['d3-2'];
-    geometry.faceVertexUvs[0][10] = modelData.Uvs['d4-1']; // 4
-    geometry.faceVertexUvs[0][11] = modelData.Uvs['d4-2'];
+    geometry.faceVertexUvs[0][0] = diceModelData.d6.Uvs['d1-1']; // 1
+    geometry.faceVertexUvs[0][1] = diceModelData.d6.Uvs['d1-2'];
+    geometry.faceVertexUvs[0][2] = diceModelData.d6.Uvs['d6-1']; // 6
+    geometry.faceVertexUvs[0][3] = diceModelData.d6.Uvs['d6-2'];
+    geometry.faceVertexUvs[0][4] = diceModelData.d6.Uvs['d2-1']; // 2
+    geometry.faceVertexUvs[0][5] = diceModelData.d6.Uvs['d2-2'];
+    geometry.faceVertexUvs[0][6] = diceModelData.d6.Uvs['d5-1']; // 5
+    geometry.faceVertexUvs[0][7] = diceModelData.d6.Uvs['d5-2'];
+    geometry.faceVertexUvs[0][8] = diceModelData.d6.Uvs['d3-1']; // 3
+    geometry.faceVertexUvs[0][9] = diceModelData.d6.Uvs['d3-2'];
+    geometry.faceVertexUvs[0][10] = diceModelData.d6.Uvs['d4-1']; // 4
+    geometry.faceVertexUvs[0][11] = diceModelData.d6.Uvs['d4-2'];
 
     return new THREE.Mesh(
       geometry,
@@ -106,6 +106,3 @@ var modelData = {
     ]
   }
 };
-
-
-module.exports = modelData;

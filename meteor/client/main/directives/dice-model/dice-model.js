@@ -1,7 +1,4 @@
-
-module.exports = 'app.directives.dice-model';
-
-angular.module(module.exports, [])
+angular.module('dice')
 .directive('diceModel', function () {
   return {
     scope: {
@@ -31,7 +28,7 @@ angular.module(module.exports, [])
       var addModel = function () {
         $scope.scene.remove($scope.dice);
 
-        $scope.model = require('./d' + $scope.diceModel);
+        $scope.model = diceModelData['d' + $scope.diceModel];
         $scope.dice = $scope.model.createMesh(stringToHex($scope.color));
         $scope.scene.add($scope.dice);
 

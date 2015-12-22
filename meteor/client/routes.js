@@ -1,3 +1,5 @@
+//angular.module("dice");
+
 angular.module("dice")
     .config(function($stateProvider, $urlRouterProvider) {
         $stateProvider

@@ -1,52 +1,90 @@
 angular.module("dice")
-  .controller('RollCtrl', function ($localStorage, roller, $scope, $stateParams, $timeout) {
-    var _ = require('lodash');
-    var socket = require('socket.io-client')();
+  .controller('RollCtrl', function ($scope, $stateParams, $timeout) { //took out roller
+    //var _ = Meteor.npmRequire('lodash');
+    //var socket = Meteor.npmRequired('socket.io-client')();
 
-
-      $scope.clientId = $localStorage.clientId;
+      $scope.clientId = "seven";
       $scope.members = [];
       $scope.member = {clientId: $scope.clientId};
       $scope.diceToRoll = [];
-      $scope.diceColor = $localStorage.diceColor || '#cc0000';
+      $scope.diceColor = '#cc0000';
       $scope.roll = {
         disabled: false,
         time: new Date(),
         values: [],
       };
 
-      socket.on('groups:update:members', function (data) {
-        $scope.$apply(function () {
-          $scope.members = getRollStats(data);
-        });
-      });
+
+      // socket.on('groups:update:members', function (data) {
+      //   $scope.$apply(function () {
+      //     $scope.members = getRollStats(data);
+      //   });
+      // });
 
       var joinGroup = function () {
-        socket.emit('groups:join', {
-          groupId: $stateParams.groupId,
-          clientId: $localStorage.clientId,
-          clientName: $localStorage.clientName,
-          diceColor: $localStorage.diceColor
-        });
+        // socket.emit('groups:join', {
+        //   groupId: $stateParams.groupId,
+        //   clientId: "seven",
+        //   clientName: "Matt Damon",
+        //   diceColor: '#cc0000'
+        // });
+        console.log("supposedly joining a group");
       };
 
-      var getRollStats = function (data) {
-        _.forEach(data, function (member, index, array) {
-          array[index].rollStats = {
-            dc: (_.find(member.rolls, {die: 20})) ?
-              _.find(member.rolls, {die: 20}).value :
-              null,
-            sum: _.sum(_.map(member.rolls, 'value'))
-          };
-        });
+      var getRollStats = function () {
 
-        return data;
-      }
+        // _.forEach(data, function (member, index, array) {
+        //   array[index].rollStats = {
+        //     dc: (_.find(member.rolls, {die: 20})) ?
+        //       _.find(member.rolls, {die: 20}).value :
+        //       null,
+        //     sum: _.sum(_.map(member.rolls, 'value'))
+        //   };
+        // });
+
+        var members = [
+          {
+            clientId: "seven",
+            diceColor: "#cc0000",
+            rolls: [
+              {
+                die : 10,
+                value : 7
+              }
+            ]
+          },
+          {
+            clientId: "steven",
+            diceColor: "#cc0000",
+            rolls: [
+              {
+                die : 8,
+                value : 7
+              },
+              {
+                die : 20,
+                value : 1
+              }
+            ]
+          },
+          {
+            clientId: "seven",
+            diceColor: "#cc0000",
+            rolls:[
+              {
+                die : 20,
+                value : 1
+              }
+            ]
+          }
+        ];
+        return members;
+      };
 
       joinGroup();
 
       $scope.setClientName = function () {
-        $localStorage.clientName = prompt('Enter your name:');
+        $scope.clientName = prompt('Enter your name:'); //localstoraged
         joinGroup();
       };
 
@@ -67,23 +105,34 @@ angular.module("dice")
         if (typeof newValue === 'undefined') {
           return;
         }
-        $localStorage.diceColor = newValue;
+        $scope.diceColor = newValue;    //localstoraged
         joinGroup();
       });
 
       $scope.roll = function () {
+        console.log("rolling");
         $scope.roll.time = new Date();
         $scope.roll.disabled = true;
         $scope.roll.values = [];
 
-        socket.emit('groups:roll', {
-          groupId: $stateParams.groupId,
-          clientId: $localStorage.clientId,
-          dice: $scope.diceToRoll
-        });
+        // $scope.$apply(function () {
+        //      $scope.members = getRollStats(data);
+        //    });
+
+           $scope.members = getRollStats();
+           console.log("scope members", $scope.members);
+
+        // socket.emit('groups:roll', {
+        //   groupId: $stateParams.groupId,
+        //   clientId: $scope.clientId,    //localstoraged
+        //   dice: $scope.diceToRoll
+        // });
+
+        //gets: groups[groupIndex].members
 
         _.forEach($scope.diceToRoll, function (die) {
-          $scope.roll.values.push(roller.roll(die));
+          //$scope.roll.values.push(roller.roll(die));
+
         });
 
         $timeout(function () {

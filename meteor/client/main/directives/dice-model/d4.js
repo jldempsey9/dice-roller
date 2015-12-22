@@ -1,10 +1,10 @@
-var modelData = {
+diceModelData.d4 = {
   createMesh: function (color) {
     var geometry = new THREE.TetrahedronGeometry(1,0);
-    geometry.faceVertexUvs[0][0] = modelData.Uvs.d1; // 10
-    geometry.faceVertexUvs[0][1] = modelData.Uvs.d2; // 8
-    geometry.faceVertexUvs[0][2] = modelData.Uvs.d3; // 20
-    geometry.faceVertexUvs[0][3] = modelData.Uvs.d4; // 2
+    geometry.faceVertexUvs[0][0] = diceModelData.d4.Uvs.d1; // 10
+    geometry.faceVertexUvs[0][1] = diceModelData.d4.Uvs.d2; // 8
+    geometry.faceVertexUvs[0][2] = diceModelData.d4.Uvs.d3; // 20
+    geometry.faceVertexUvs[0][3] = diceModelData.d4.Uvs.d4; // 2
 
     return new THREE.Mesh(
       geometry,
@@ -46,6 +46,3 @@ var modelData = {
     ]
   }
 };
-
-
-module.exports = modelData;

@@ -54,12 +54,14 @@
           <div>
             <span data-ng-if="member.rollStats.dc !== null">
               <strong>Difficulty Throw: </strong>{{ member.rollStats.dc }}
+              <div data-dice-model data-roll-time="2" data-color="#cc0000" data-model="6" data-value="5"></div>
             </span>&nbsp;&nbsp;&nbsp;&nbsp;
             <span data-ng-if="member.rollStats.sum">
               <strong>Sum: </strong>{{ member.rollStats.sum }}
             </span>
           </div>
           <span data-ng-repeat="memberRoll in member.rolls track by $index">
+            <div> {{roll.time}} {{member.diceColor}} {{memberRoll.die}} {{memberRoll.value}} </div>
             <div data-dice-model data-roll-time="roll.time" data-color="member.diceColor" data-model="memberRoll.die" data-value="memberRoll.value"></div>
           </span>
         </div>

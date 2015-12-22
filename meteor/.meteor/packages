@@ -26,3 +26,7 @@ meteorhacks:npm
 
 npm-container
 http
+limemakers:three
+joncursi:socket-io-client
+mrt:sockjs
+infinitedg:tween

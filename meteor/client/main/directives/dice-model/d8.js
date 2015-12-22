@@ -1,15 +1,14 @@
-
-var modelData = {
+diceModelData.d8 = {
   createMesh: function (color) {
     var geometry = new THREE.OctahedronGeometry(0.9,0);
-    geometry.faceVertexUvs[0][0] = modelData.Uvs.d1; // 1
-    geometry.faceVertexUvs[0][1] = modelData.Uvs.d7; // 7
-    geometry.faceVertexUvs[0][2] = modelData.Uvs.d5; // 5
-    geometry.faceVertexUvs[0][3] = modelData.Uvs.d3; // 3
-    geometry.faceVertexUvs[0][4] = modelData.Uvs.d2; // 2
-    geometry.faceVertexUvs[0][5] = modelData.Uvs.d8; // 8
-    geometry.faceVertexUvs[0][6] = modelData.Uvs.d6; // 6
-    geometry.faceVertexUvs[0][7] = modelData.Uvs.d4; // 4
+    geometry.faceVertexUvs[0][0] = diceModelData.d8.Uvs.d1; // 1
+    geometry.faceVertexUvs[0][1] = diceModelData.d8.Uvs.d7; // 7
+    geometry.faceVertexUvs[0][2] = diceModelData.d8.Uvs.d5; // 5
+    geometry.faceVertexUvs[0][3] = diceModelData.d8.Uvs.d3; // 3
+    geometry.faceVertexUvs[0][4] = diceModelData.d8.Uvs.d2; // 2
+    geometry.faceVertexUvs[0][5] = diceModelData.d8.Uvs.d8; // 8
+    geometry.faceVertexUvs[0][6] = diceModelData.d8.Uvs.d6; // 6
+    geometry.faceVertexUvs[0][7] = diceModelData.d8.Uvs.d4; // 4
 
 
     return new THREE.Mesh(
@@ -75,6 +74,3 @@ var modelData = {
     ]
   }
 };
-
-
-module.exports = modelData;

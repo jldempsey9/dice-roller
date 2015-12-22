@@ -1,27 +1,26 @@
-
-var modelData = {
+diceModelData.d20 = {
   createMesh: function (color) {
     var geometry = new THREE.IcosahedronGeometry(1,0);
-    geometry.faceVertexUvs[0][0] = modelData.Uvs.d10; // 10
-    geometry.faceVertexUvs[0][1] = modelData.Uvs.d8; // 8
-    geometry.faceVertexUvs[0][2] = modelData.Uvs.d20; // 20
-    geometry.faceVertexUvs[0][3] = modelData.Uvs.d2; // 2
-    geometry.faceVertexUvs[0][4] = modelData.Uvs.d12; // 12
-    geometry.faceVertexUvs[0][5] = modelData.Uvs.d16; // 16
-    geometry.faceVertexUvs[0][6] = modelData.Uvs.d17; // 17
-    geometry.faceVertexUvs[0][7] = modelData.Uvs.d15; // 15
-    geometry.faceVertexUvs[0][8] = modelData.Uvs.d18; // 18
-    geometry.faceVertexUvs[0][9] = modelData.Uvs.d14; // 14
-    geometry.faceVertexUvs[0][10] = modelData.Uvs.d19; //19
-    geometry.faceVertexUvs[0][11] = modelData.Uvs.d1; // 1
-    geometry.faceVertexUvs[0][12] = modelData.Uvs.d13; //13
-    geometry.faceVertexUvs[0][13] = modelData.Uvs.d11; // 11
-    geometry.faceVertexUvs[0][14] = modelData.Uvs.d9; // 9
-    geometry.faceVertexUvs[0][15] = modelData.Uvs.d3; // 3
-    geometry.faceVertexUvs[0][16] = modelData.Uvs.d7; // 7
-    geometry.faceVertexUvs[0][17] = modelData.Uvs.d5; // 5
-    geometry.faceVertexUvs[0][18] = modelData.Uvs.d4; // 4
-    geometry.faceVertexUvs[0][19] = modelData.Uvs.d6; // 6
+    geometry.faceVertexUvs[0][0] = diceModelData.d20.Uvs.d10; // 10
+    geometry.faceVertexUvs[0][1] = diceModelData.d20.Uvs.d8; // 8
+    geometry.faceVertexUvs[0][2] = diceModelData.d20.Uvs.d20; // 20
+    geometry.faceVertexUvs[0][3] = diceModelData.d20.Uvs.d2; // 2
+    geometry.faceVertexUvs[0][4] = diceModelData.d20.Uvs.d12; // 12
+    geometry.faceVertexUvs[0][5] = diceModelData.d20.Uvs.d16; // 16
+    geometry.faceVertexUvs[0][6] = diceModelData.d20.Uvs.d17; // 17
+    geometry.faceVertexUvs[0][7] = diceModelData.d20.Uvs.d15; // 15
+    geometry.faceVertexUvs[0][8] = diceModelData.d20.Uvs.d18; // 18
+    geometry.faceVertexUvs[0][9] = diceModelData.d20.Uvs.d14; // 14
+    geometry.faceVertexUvs[0][10] = diceModelData.d20.Uvs.d19; //19
+    geometry.faceVertexUvs[0][11] = diceModelData.d20.Uvs.d1; // 1
+    geometry.faceVertexUvs[0][12] = diceModelData.d20.Uvs.d13; //13
+    geometry.faceVertexUvs[0][13] = diceModelData.d20.Uvs.d11; // 11
+    geometry.faceVertexUvs[0][14] = diceModelData.d20.Uvs.d9; // 9
+    geometry.faceVertexUvs[0][15] = diceModelData.d20.Uvs.d3; // 3
+    geometry.faceVertexUvs[0][16] = diceModelData.d20.Uvs.d7; // 7
+    geometry.faceVertexUvs[0][17] = diceModelData.d20.Uvs.d5; // 5
+    geometry.faceVertexUvs[0][18] = diceModelData.d20.Uvs.d4; // 4
+    geometry.faceVertexUvs[0][19] = diceModelData.d20.Uvs.d6; // 6
 
     return new THREE.Mesh(
       geometry,
@@ -160,6 +159,3 @@ var modelData = {
     ]
   }
 };
-
-
-module.exports = modelData;
