@@ -1,0 +1,11 @@
+{
+  "name": "ionicmeteorpost",
+  "version": "0.0.1",
+  "dependencies": {
+    "ngCordova": "latest",
+    "swiper":"3.2.7",
+    "ng-sortable":"1.3.2",
+    "lodash":"3.10.1"
+  },
+  "private": true
+}

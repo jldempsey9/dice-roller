@@ -1,0 +1,92 @@
+.resource-card {
+  zoom: 0.5;
+}
+
+.score-slide {
+  margin-bottom:700px; /* 700px */
+}
+
+.development-slide {
+  margin-bottom:900px; /* 900px */
+}
+
+.hand-slide {
+  margin-bottom:1200px; /* 1200px */
+}
+
+.store-slide {
+  margin-bottom:900px; /* 900px */
+}
+
+.small-resource-icon {
+  zoom:0.2;
+}
+
+.tradingOptions {
+  zoom:0.1;
+}
+
+.building-costs{
+  zoom:0.2;
+  height:3300px;
+  width:150px;
+  background-image:url("img/buildingCosts.jpg");
+}
+
+.development-card {
+  height:200px;
+  display:block;
+  margin:auto;
+}
+
+.card-back {
+  height:200px;
+  display:block;
+  margin:auto;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height:330px;
+  width:100%;
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+#horizontal-container {
+  display: inline-block;
+}
+
+#horizontal-container .as-sortable-item,
+#horizontal-container .as-sortable-placeholder {
+  display: inline-block;
+  width: 160px;
+  height: 100px;
+  float: left;
+}
+
+#horizontal-container .sortable-row:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

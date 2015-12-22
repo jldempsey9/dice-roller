@@ -1,0 +1,69 @@
+<ion-view>
+  <ion-content>
+
+    <a href="#/main">
+      <button class="button">
+        goto: main
+      </button>
+    </a>
+    <a href="#/roll">
+      <button class="button">
+        do nothing
+      </button>
+    </a>
+
+    <style>
+      [data-dice-model] {
+        display: inline-block;
+        width: 120px;
+      }
+    </style>
+    <div class="row">
+      <div class="col-xs-12">
+        <!-- <div data-dice-model data-model="diceModel" data-color="diceColor"></div> -->
+      </div>
+      <div class="col-xs-4">
+        <h3>Click Dice to add</h3>
+        <p>
+          <button class="btn btn-default" data-ng-click="addDie(4)">d4</button>
+          <button class="btn btn-default" data-ng-click="addDie(6)">d6</button>
+          <button class="btn btn-default" data-ng-click="addDie(8)">d8</button>
+          <button class="btn btn-default" data-ng-click="addDie(10)">d10</button>
+          <!-- <button class="btn btn-default" data-ng-click="addDie(12)">d12</button> -->
+          <button class="btn btn-default" data-ng-click="addDie(20)">d20</button>
+        </p>
+        <p>
+          <label for="diceColor">Change dice color</label> <input type="color" id="diceColor" data-ng-model="diceColor">
+        </p>
+        <h3>Dice to Roll</h3>
+        <p>
+        <a href="" class="btn btn-success btn-small" data-ng-class="{'disabled': roll.disabled}" data-ng-click="roll()">Roll</a> or <a href="" class="text-warning" data-ng-click="removeAllDice()">Reset</a>
+        </p>
+        <span data-ng-repeat="die in diceToRoll track by $index"><button class="btn btn-default"  data-ng-click="removeDie($index)">d{{ die }}</button> </span>
+      </div>
+      <div class="col-xs-8">
+        <h3>Players</h3>
+        <div data-ng-repeat="member in members track by $index">
+          <h4>{{ member.clientName || 'Anonymous Player' }}</h4>
+          <span data-ng-if="member.clientId == clientId">
+            <a href="" data-ng-click="setClientName()">
+              <span data-ng-if="!member.clientName">Set your name</span>
+              <span data-ng-if="member.clientName">Change name</span>
+            </a>
+          </span> <br>
+          <div>
+            <span data-ng-if="member.rollStats.dc !== null">
+              <strong>Difficulty Throw: </strong>{{ member.rollStats.dc }}
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span data-ng-if="member.rollStats.sum">
+              <strong>Sum: </strong>{{ member.rollStats.sum }}
+            </span>
+          </div>
+          <span data-ng-repeat="memberRoll in member.rolls track by $index">
+            <div data-dice-model data-roll-time="roll.time" data-color="member.diceColor" data-model="memberRoll.die" data-value="memberRoll.value"></div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
