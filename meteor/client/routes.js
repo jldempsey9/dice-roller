@@ -12,5 +12,5 @@ angular.module("dice")
               controller: 'RollCtrl'
             });
 
-        $urlRouterProvider.otherwise('/main');
+        $urlRouterProvider.otherwise('/roll');
     });
